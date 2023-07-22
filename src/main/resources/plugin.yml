@@ -1,0 +1,11 @@
+name: AdvancedLottery
+main: com.gmail.ianlim224.advancedlottery.AdvancedLottery
+version : 12.3
+api-version: 1.13
+depend: [Vault]
+softdepend: [Essentials, PlaceholderAPI, Vault]
+description: Fun and addictive lottery game!
+commands:
+  lottery:
+    description: main command
+    usage: Wrong usage, do /lottery for help
