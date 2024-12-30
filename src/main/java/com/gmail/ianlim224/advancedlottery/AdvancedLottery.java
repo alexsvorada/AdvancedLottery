@@ -36,10 +36,11 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.plugin.messaging.PluginMessageListener;
 
+import java.security.SecureRandom;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map.Entry;
-import java.util.Random;
 import java.util.UUID;
 
 import static com.gmail.ianlim224.advancedlottery.utils.UpdateChecker.UpdateReason.UNRELEASED_VERSION;
@@ -50,7 +51,7 @@ public class AdvancedLottery extends JavaPlugin {
     static LotteryGrabber lotteryGrabber;
     private static AdvancedLottery instance;
     private final FileLogging fileLogging = new FileLogging(this);
-    private final Random random = new Random();
+    private final SecureRandom random = new SecureRandom();
     private final ReminderManager reminderManager = new ReminderManager(this);
     private final WinnerRegistry winnerRegistry = new WinnerRegistry(this);
     private final VaultEcon vaultEcon = new VaultEcon(this);
@@ -292,7 +293,7 @@ public class AdvancedLottery extends JavaPlugin {
         getServer().getScheduler().runTaskTimer(this, new ItemTask(this), 0, 20);
     }
 
-    public Random getRandom() {
+    public SecureRandom getRandom() {
         return random;
     }
 
